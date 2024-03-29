@@ -60,7 +60,7 @@ function Products() {
 					<tbody>
 						{products.map((product) => (
 							<tr key={product.name + product.price}>
-								<td style={{ fontWeight: 'bold' }}>{product.name}</td>
+								<td>{product.name}</td>
 								<td>{product.price}</td>
 
 								{

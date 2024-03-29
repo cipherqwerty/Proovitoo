@@ -11,4 +11,7 @@ a {
 	margin-top: 50px;
 }
 
+td:first-child {
+	font-weight: bold;
+}
 /*TODO: Set the font weight of the first table column to bold*/

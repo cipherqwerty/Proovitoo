@@ -1,9 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import shipmentsJSON from './data/shipments.json';
 function OneProduct() {
 	const { index } = useParams();
 	const [shipments, setShipments] = useState([]);
+
+	const orderRef = useRef();
+	const dateRef = useRef();
+	const customerRef = useRef();
+	const trackingRef = useRef();
+	const statusRef = useRef();
+	const consigneeRef = useRef();
+
 	useEffect(() => {
 		fetch('https://my.api.mockaroo.com/shipments.json?key=5e0b62d0')
 			.then((res) => {
@@ -20,6 +28,21 @@ function OneProduct() {
 			});
 	}, []);
 	const displayProduct = shipments[index] || [];
+
+	const editProduct = () => {
+		const updatedProduct = shipments.slice();
+
+		updatedProduct[index] = {
+			orderNo: orderRef.current.value,
+			date: dateRef.current.value,
+			customer: customerRef.current.value,
+			trackingNo: trackingRef.current.value,
+			status: statusRef.current.value,
+			consignee: consigneeRef.current.value,
+		};
+		console.log(updatedProduct);
+		setShipments(updatedProduct);
+	};
 
 	return (
 		<div className='shadow-2xl mt-[100px] container h-[500px] flex flex-col justify-center rounded-[10px] '>
@@ -40,7 +63,8 @@ function OneProduct() {
 					<input
 						className=' w-[550px] bg-gray-200 h-12 rounded p-4  text-gray-400 outline-none'
 						type='text'
-						defaultValue={displayProduct.orderNo}
+						placeholder={displayProduct.orderNo}
+						ref={orderRef}
 					/>{' '}
 					<br />
 					<label className=' inline-block text-left w-[550px] my-2 text-sm text-gray-600 font-semibold'>
@@ -50,7 +74,8 @@ function OneProduct() {
 					<input
 						className='  w-[550px] bg-gray-200 h-12 rounded p-4 text-sm text-gray-400 outline-none'
 						type='text'
-						defaultValue={displayProduct.customer}
+						placeholder={displayProduct.customer}
+						ref={customerRef}
 					/>{' '}
 					<br />
 					<label className=' inline-block text-left w-[550px] my-2 text-sm text-gray-600 font-semibold'>
@@ -60,7 +85,8 @@ function OneProduct() {
 					<input
 						className='w-[550px] bg-gray-200 h-12 rounded p-4 text-sm text-gray-400 outline-none'
 						type='text'
-						defaultValue={displayProduct.consignee}
+						placeholder={displayProduct.consignee}
+						ref={consigneeRef}
 					/>{' '}
 					<br />
 				</div>
@@ -73,7 +99,8 @@ function OneProduct() {
 					<input
 						className='w-[550px] bg-gray-200 h-12 rounded p-4 my-2 text-sm text-gray-400 outline-none'
 						type='text'
-						defaultValue={displayProduct.date}
+						placeholder={displayProduct.date}
+						ref={dateRef}
 					/>{' '}
 					<br />
 					<label className=' inline-block text-left w-[550px] my-2 text-sm text-gray-600 font-semibold'>
@@ -83,7 +110,8 @@ function OneProduct() {
 					<input
 						className='w-[550px] bg-gray-200 h-12 rounded p-4 text-sm text-gray-400 outline-none'
 						type='text'
-						defaultValue={displayProduct.trackingNo}
+						placeholder={displayProduct.trackingNo}
+						ref={trackingRef}
 					/>{' '}
 					<br />
 					<label className='inline-block text-left w-[550px] my-2 text-sm text-gray-600 font-semibold'>
@@ -93,12 +121,21 @@ function OneProduct() {
 					<input
 						className='w-[550px] bg-gray-200 h-12 rounded p-4 text-sm text-gray-400 outline-none'
 						type='text'
-						defaultValue={displayProduct.status}
+						placeholder={displayProduct.status}
+						ref={statusRef}
 					/>
 				</div>
 			</div>
 			<div className='px-[30px] mt-10'>
 				<div className='border-b-2 border-gray-100'></div>
+			</div>
+			<div>
+				<button
+					className=' h-[40px] w-[120px] border-gray-400 border rounded mt-4 active: translate-y-[1px] active:-translate-y-[1px]  hover:bg-gray-400 hover:cursor-pointer hover: transition 1s hover:opacity-90'
+					onClick={editProduct}
+				>
+					Save
+				</button>
 			</div>
 		</div>
 	);

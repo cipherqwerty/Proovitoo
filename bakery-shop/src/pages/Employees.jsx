@@ -81,10 +81,10 @@ function Employees() {
 					<tbody>
 						{employers.map((employee, id) => (
 							<tr key={id}>
+								<td>{employee.id}</td>
 								<td>
 									<img src={employee.avatar} alt='' />
 								</td>
-								<td>{employee.id}</td>
 								<td>{employee.first_name}</td>
 								<td>{employee.email}</td>
 								<td>

@@ -37,6 +37,7 @@ function Product() {
 						<th className='text-sm text-gray-400 font-medium'>TRACKINGNO</th>
 						<th className='text-sm text-gray-400 font-medium'>STATUS</th>
 						<th className='text-sm text-gray-400 font-medium'>CONSIGNEE</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody className='text-nowrap'>
