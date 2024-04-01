@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'verybold';
+	src: url('../fonts/BoosterNextFY-Black.woff') format('woff'),
+		url('../fonts/BoosterNextFY-Black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'bold';
+	src: url('../fonts/BoosterNextFY-Bold.woff') format('woff'),
+		url('../fonts/BoosterNextFY-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'light';
+	src: url('../fonts/BoosterNextFY-Light.woff') format('woff'),
+		url('../fonts/BoosterNextFY-Light.woff2') format('woff2');
+	font-weight: lighter;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'medium';
+	src: url('../fonts/BoosterNextFY-Medium.woff') format('woff'),
+		url('../fonts/BoosterNextFY-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'regular';
+	src: url('../fonts/BoosterNextFY-Regular.woff') format('woff'),
+		url('../fonts/BoosterNextFY-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'thin';
+	src: url('../fonts/BoosterNextFY-Thin.woff') format('woff'),
+		url('../fonts/BoosterNextFY-Thin.woff2') format('woff2');
+	font-weight: 100;
+	font-style: normal;
+}
+$vb: 'verybold', sans-serif;
+$bold: 'bold', sans-serif;
+$medium: 'medium', sans-serif;
+$regular: 'regular', sans-serif;
+$light: 'light', sans-serif;
+$thin: 'thin', sans-serif;

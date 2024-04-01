@@ -1,0 +1,79 @@
+@import './variables';
+@import './fonts';
+
+.main-container {
+	@include mainContainer;
+	@include background;
+}
+
+.container {
+	@include container;
+}
+
+.header-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	h1 {
+		font-family: $bold;
+		font-size: 2.8rem;
+		color: $primaryFontColor;
+	}
+	margin-bottom: 40px;
+}
+
+.p-wrapper {
+	p {
+		font-family: $vb;
+		color: $primaryFontColor;
+	}
+	margin-bottom: 40px;
+}
+
+.img-wrapper {
+	position: relative;
+	margin-top: 30px;
+	width: 100%;
+	height: 500px;
+	.img-title {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		padding: 10px 24px;
+		width: 100%;
+		box-sizing: border-box;
+		z-index: 6;
+		color: $primaryFontColor;
+		font-size: 1rem;
+		font-family: $medium;
+	}
+	.img-cover {
+		width: 100%;
+		height: 500px;
+		transition: transform 0.5s ease;
+		filter: blur(2px);
+	}
+	.img-hover {
+		width: 100%;
+		height: 500px;
+		z-index: 5;
+		position: absolute;
+		width: 75%;
+		right: 100px;
+		transition: 0.3s;
+		&:hover {
+			transform: scale(1.05);
+			transition: transform 0.3s;
+		}
+	}
+}
+
+.content {
+	p {
+		margin-top: 40px;
+		font-family: $medium;
+		color: $primaryFontColor;
+	}
+}

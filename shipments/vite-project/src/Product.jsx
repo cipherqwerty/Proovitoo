@@ -22,8 +22,10 @@ function Product() {
 
 	const deleteProduct = (e) => {
 		const result = shipments.slice();
+		console.log(e, 'click');
 		result.splice(e, 1);
 		setShipments(result);
+		console.log(result, 'click');
 	};
 
 	return (
@@ -37,7 +39,7 @@ function Product() {
 						<th className='text-sm text-gray-400 font-medium'>TRACKINGNO</th>
 						<th className='text-sm text-gray-400 font-medium'>STATUS</th>
 						<th className='text-sm text-gray-400 font-medium'>CONSIGNEE</th>
-						<th></th>
+						<span></span>
 					</tr>
 				</thead>
 				<tbody className='text-nowrap'>
@@ -67,14 +69,12 @@ function Product() {
 										<img src='./card.png' className='h-[15px] ' alt='' />
 									</Link>
 								</td>
-								<td className='flex items-center justify-center h-[40px] w-[60px] bg-red-500 rounded-md shadow-md cursor-pointer'>
-									<img
-										src='./close.png'
-										alt=''
-										className='h-[10px] '
-										onClick={() => deleteProduct(index)}
-									/>
-								</td>
+								<span
+									onClick={() => deleteProduct(index)}
+									className='flex items-center justify-center h-[40px] w-[60px] bg-red-500 rounded-md shadow-md cursor-pointer'
+								>
+									<img src='./close.png' alt='' className='h-[10px] ' />
+								</span>
 							</td>
 						</tr>
 					))}

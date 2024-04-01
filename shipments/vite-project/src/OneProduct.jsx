@@ -27,7 +27,7 @@ function OneProduct() {
 				setShipments(shipmentsJSON);
 			});
 	}, []);
-	const displayProduct = shipments[index] || [];
+	const displayProduct = shipments[index] || {};
 
 	const editProduct = () => {
 		const updatedProduct = shipments.slice();

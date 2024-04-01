@@ -1,0 +1,31 @@
+@import '../styles/variables';
+@import './fonts';
+
+.main-container {
+	@include mainContainer;
+	@include background;
+}
+
+.container {
+	@include container;
+	height: 100vh;
+}
+
+.text-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	h1 {
+		font-family: $bold;
+		color: $highlightColor;
+		font-size: 45px;
+		text-transform: uppercase;
+	}
+	p {
+		font-family: $bold;
+		color: $primaryFontColor;
+		font-size: 39px;
+	}
+}

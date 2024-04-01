@@ -1,0 +1,71 @@
+@import '../styles/fonts';
+@import './variables';
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+$textColorHover: #03875c;
+$textColor: #3a3d57;
+
+img {
+	width: 170px;
+	height: 50px;
+}
+
+.content-wrapper {
+	padding: 20px;
+}
+
+.logo-wrapper {
+	margin-bottom: 60px;
+	margin-top: 30px;
+}
+
+.nav-container {
+	height: 100vh;
+	width: $menuWidth;
+	max-width: $menuMaxWidth;
+	position: fixed;
+	z-index: 900;
+	overflow: auto;
+	background-color: #ffff;
+}
+
+.text {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 10px;
+	height: 50px;
+	cursor: pointer;
+
+	p {
+		transition: 0.25s;
+		color: $textColor;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		font-family: $medium;
+	}
+
+	img {
+		width: 15px;
+		height: 18px;
+		transition: 0.25s;
+	}
+	&:hover img {
+		transform: scale(1.5);
+		transition: transform 0.25s;
+		cursor: pointer;
+	}
+	&:hover p,
+	&:focus p {
+		cursor: pointer;
+		color: $textColorHover;
+		transform: scale(1.05);
+		transition: transform 0.25s;
+	}
+}

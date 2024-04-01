@@ -1,0 +1,11 @@
+@import './variables';
+@import './fonts';
+
+.main-container {
+	@include background;
+	@include mainContainer;
+}
+
+.container {
+	@include container;
+}
