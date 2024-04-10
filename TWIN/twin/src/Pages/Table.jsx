@@ -17,6 +17,12 @@ function Table() {
 			});
 	}, []);
 
+	const getBirthDate = (personalCode) => {
+		const birthDay = personalCode.toString().slice(5, 7);
+		const birthMonths = personalCode.toString().slice();
+		return birthDay + '.12.2022';
+	};
+
 	return (
 		<div>
 			<Navbar />
@@ -35,7 +41,7 @@ function Table() {
 									</th>
 									<th>Perekonnanimi</th>
 									<th>Sugu</th>
-									<th>Sünnikuupäev</th>
+									<th>Isikukood</th>
 									<th>Telefon</th>
 								</tr>
 							</thead>
@@ -45,7 +51,7 @@ function Table() {
 										<td>{person.firstname}</td>
 										<td>{person.surname}</td>
 										<td>{person.sex}</td>
-										<td>{person.personal_code}</td>
+										<td>{getBirthDate(person.personal_code)}</td>
 										<td>{person.phone}</td>
 									</tr>
 								))}
