@@ -10,7 +10,7 @@
 	@include container;
 }
 
-.header-wrapper {
+.title-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -22,7 +22,7 @@
 	margin-bottom: 40px;
 }
 
-.p-wrapper {
+.text-p-wrapper {
 	p {
 		font-family: $vb;
 		color: $primaryFontColor;
@@ -35,6 +35,8 @@
 	margin-top: 30px;
 	width: 100%;
 	height: 500px;
+	overflow: clip;
+	overflow-clip-margin: content-box;
 	.img-title {
 		position: absolute;
 		bottom: 0;
@@ -49,13 +51,14 @@
 		font-size: 1rem;
 		font-family: $medium;
 	}
-	.img-cover {
+	.img-back {
 		width: 100%;
-		height: 500px;
+		height: 100%;
 		transition: transform 0.5s ease;
-		filter: blur(2px);
+		transform: scale(1.4);
+		filter: blur(3px);
 	}
-	.img-hover {
+	.img-front {
 		width: 100%;
 		height: 500px;
 		z-index: 5;
@@ -63,17 +66,52 @@
 		width: 75%;
 		right: 100px;
 		transition: 0.3s;
-		&:hover {
-			transform: scale(1.05);
-			transition: transform 0.3s;
-		}
+	}
+	&:hover .img-back {
+		transform: scale(1.05);
+		overflow: clip;
+		overflow-clip-margin: content-box;
+	}
+	&:hover .img-front {
+		transform: scale(1.05);
+		transition: transform 0.3s;
+		overflow: clip;
+		overflow-clip-margin: content-box;
 	}
 }
 
-.content {
+.p-wrapper {
 	p {
 		margin-top: 40px;
 		font-family: $medium;
 		color: $primaryFontColor;
+	}
+}
+
+.btn-wrapper {
+	margin-top: 40px;
+	button {
+		font-weight: 700;
+		padding: 8px 16px;
+		&:nth-child(1) {
+			width: 50px;
+			background-color: $primaryButtonColor;
+			border-radius: 2rem;
+			height: 35px;
+		}
+		&:nth-child(2) {
+			margin-left: 15px;
+			width: 85px;
+			background-color: $primaryButtonColor;
+			border-radius: 2rem;
+			height: 35px;
+		}
+		&:nth-child(3) {
+			margin-left: 15px;
+			background-color: $primaryButtonColor;
+			border-radius: 2rem;
+			width: 65px;
+			height: 35px;
+		}
 	}
 }

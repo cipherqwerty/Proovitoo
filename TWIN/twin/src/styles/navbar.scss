@@ -15,10 +15,6 @@ img {
 	height: 50px;
 }
 
-.content-wrapper {
-	padding: 20px;
-}
-
 .logo-wrapper {
 	margin-bottom: 60px;
 	margin-top: 30px;
@@ -32,6 +28,7 @@ img {
 	z-index: 900;
 	overflow: auto;
 	background-color: #ffff;
+	padding: 25px;
 }
 
 .text {
@@ -42,13 +39,15 @@ img {
 	margin-top: 10px;
 	height: 50px;
 	cursor: pointer;
-
+	width: $menuWidth;
+	padding: 11.2px 16px;
 	p {
 		transition: 0.25s;
 		color: $textColor;
 		font-size: 1.2rem;
 		text-transform: uppercase;
 		font-family: $medium;
+		text-align: right;
 	}
 
 	img {
