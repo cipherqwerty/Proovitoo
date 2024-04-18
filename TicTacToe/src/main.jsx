@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/styles/table.scss';
-import App from './App.jsx';
+import './index.css';
+import Game from './Game.jsx';
 import { BrowserRouter } from 'react-router-dom';
+// import GameHistoryContext from './context/GameHistoryContext.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
+		{/* <GameHistoryContext> */}
 		<BrowserRouter>
-			<App />
+			<Game />
 		</BrowserRouter>
+		{/* </GameHistoryContext> */}
 	</React.StrictMode>
 );
