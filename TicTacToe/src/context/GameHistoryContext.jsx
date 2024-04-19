@@ -1,11 +1,9 @@
-// import React, { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
-// export const GameHistoryContext = createContext();
+const GHC = createContext();
 
-// export default function GameHistoryContext({ children }) {
-// 	return (
-// 		<GameHistoryContext.Provider value={{}}>
-// 			{children}
-// 		</GameHistoryContext.Provider>
-// 	);
-// }
+export const GameHistoryProvider = GHC.Provider;
+export const GameHistoryConsumer = GHC.Consumer;
+export const useGameHistoryCxt = () => useContext(GHC);
+
+export default GHC;

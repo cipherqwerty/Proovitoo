@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import '../assets/css/GameBoard.css';
-import Welcome from './Welcome';
 import ScoreBoard from './ScoreBoard';
 
 export default function GameBoard({ playerOne, playerTwo }) {
@@ -10,6 +9,7 @@ export default function GameBoard({ playerOne, playerTwo }) {
 	const [isDraw, setIsDraw] = useState(false);
 	const [playerOneScore, setPlayerOneScore] = useState(0);
 	const [playerTwoScore, setPlayerTwoScore] = useState(0);
+
 	const checkwinner = (arr) => {
 		let combos = {
 			across: [
